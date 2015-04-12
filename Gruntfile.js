@@ -325,7 +325,34 @@ module.exports = function (grunt) {
         'imagemin',
         'svgmin'
       ]
-    }
+    },
+         buildcontrol: {
+        options: {
+          dir: 'dist',
+          commit: true,
+          push: true,
+          message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+        },
+        pages: {
+          options: {
+            remote: 'git@github.com:Igor-Ioriatti/YoGruntDepl_Tutorial.git',
+            branch: 'gh-pages'
+          }
+        },
+        heroku: {
+          options: {
+            remote: 'git@heroku.com:young-waters-8765.herokuapp.git',
+            branch: 'master',
+            tag: pkg.version
+          }
+        },
+        local: {
+          options: {
+            remote: '../',
+            branch: 'build'
+          }
+        }
+      }
   });
 
 
