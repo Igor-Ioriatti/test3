@@ -9,7 +9,7 @@
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
-
+  var pkg = require('./package.json');
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
@@ -335,8 +335,8 @@ module.exports = function (grunt) {
         },
         pages: {
           options: {
-            remote: 'git@github.com:Igor-Ioriatti/YoGruntDepl_Tutorial.git',
-            branch: 'gh-pages'
+            remote: 'git@github.com:Igor-Ioriatti/test3.git',
+            branch: 'master'
           }
         },
         heroku: {
